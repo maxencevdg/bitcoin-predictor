@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap');
+
+body {
+    align-items: center;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Kanit', sans-serif;
+    font-size: 26px;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+p {
+    margin: 0;
+}
+
+.green {
+    color: #4CAF50;
+}
+
+.red {
+    color: #f44336;
+}
+
+.global-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+}
+
+#popUp {
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    font-size: 18px;
+    height: 50px;
+    justify-content: center;
+    margin-top: 135px;
+    opacity: 0;
+    padding: 0px 30px;
+    position: absolute;
+    top: 0;
+    translate: translateY(-100px);
+    width: 400px;
+    z-index: -1;
+}
+
+.infos-container {
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: none;
+    height: 70%;
+    justify-content: center;
+    margin: 20px 0;
+    opacity: 0;
+    padding: 20px 30px;
+    position: absolute;
+    transition: opacity 0.5s ease;
+    width: 80%;
+}
+
+.infos-container.show {
+    animation: reveal 0.5s ease-in-out forwards;
+    display: flex;
+    z-index: 5;
+}
+
+.infos-container.hide {
+    animation: hideInfos 0.5s ease-in-out forwards;
+    display: none;
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes hideInfos {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.infos-content {
+    font-size: 30px;
+    width: 80%;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+@keyframes popUpAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+        z-index: -1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        z-index: 2;
+    }
+}
+
+@keyframes popUpAnimationHide {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+        z-index: 2;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+        z-index: -1;
+    }
+}
+
+.statistics {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    font-weight: 600;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 20px 30px;
+    width: 100%;
+}
+
+.btc-game-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    width: 100%;
+}
+
+#price {
+    align-items: center;
+    display: flex;
+    font-size: 50px;
+    font-weight: 700;
+    justify-content: center;
+    margin: 30px 0;
+    transition: color 0.3s ease;
+}
+
+.buttons {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 20px 30px;
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px 20px;
+}
+
+#UpButton,
+#DownButton {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s ease;
+    width: 175px;
+}
+
+#infos {
+    background-color: rgb(0, 102, 255);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px rgb(0, 74, 185);
+    color: white;
+    display: flex;
+    font-size: 30px;
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.5);
+    top: 20px;
+}
+
+#UpButton {
+    background-color: #4CAF50;
+    box-shadow: 0 5px #2f7a32;
+}
+
+#DownButton {
+    background-color: #f44336;
+    box-shadow: 0 5px #ac2f26;
+}
+
+#UpButton:active,
+#DownButton:active,
+#infos:active {
+    transform: translateY(3px);
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        font-size: 22px;
+    }
+
+    #popUp {
+        font-size: 13px;
+        height: 40px;
+        margin-top: 170px;
+        width: 300px;
+    }
+
+    #price {
+        font-size: 40px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    #UpButton,
+    #DownButton {
+        width: 125px;
+    }
+    
+    .global-container {
+        width: 350px;
+    }
+
+    .statistics,
+    .btc-game-container,
+    .buttons {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .infos-content {
+        font-size: 20px;
+    }
+
+    .infos-container {
+        padding: 0px;
+        width: 92%;
+    }
+    
+}

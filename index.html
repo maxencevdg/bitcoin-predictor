@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="infos">?</button>
+    <div class="infos-container">
+        <div class="infos-content">
+            <p class="title">How does it work?</p>
+            <p>
+                This page is a Bitcoin price prediction page. 
+                The principle is to predict whether the price will increase or decrease in the next 5 seconds. 
+                If you are right, you win 1 point. If you are wrong, you lose 1 point.
+            </p>
+        </div>
+    </div>
+    <div class="global-container">
+        <div id="popUp"></div>
+        <div class="statistics">
+            <div id="score"></div>
+            <div class="timer">Timer: 5</div>
+        </div>
+        <div class="btc-game-container">
+            <p>BTC price in USD</p>
+            <p id="price"></p>
+        </div>
+        <div class="buttons">
+            <button id="UpButton">Up</button>
+            <button id="DownButton">Down</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

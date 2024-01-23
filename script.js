@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let isButtonDisabled = false // Etat du bouton (activé ou désactivé)
     let firstLoad = true // Indicateur du premier chargement de la page
     let choice = 0 // Choix de l'utilisateur (1 = hausse, 2 = baisse)
-    let score = 0 // Score de l'utilisateur
+    let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0 // Score de l'utilisateur
     let textPopUp = [ // Texte à afficher dans la pop-up en fonction du résultat
-        '📈 Well played ! The price was higher',
-        '📉 Well played ! The price was lower',
+        '📈 Well done ! Bitcoin up',
+        '📉 Well done ! Bitcoin down',
         '🚫 Not this time ! Try again',
-        '⏳ The price has not yet been updated'
+        '⏳ Price not yet updated'
     ]
     const scoreElement = document.getElementById('score')
     const priceElement = document.getElementById('price')
@@ -105,13 +105,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function checkPrice() {
         let winCondition = (choice === 1 && lastBitcoinPrice > previousBitcoinPrice) || (choice === 2 && lastBitcoinPrice < previousBitcoinPrice)
         let loseCondition = (choice === 1 && lastBitcoinPrice < previousBitcoinPrice) || (choice === 2 && lastBitcoinPrice > previousBitcoinPrice)
-
+    
         if (winCondition) {
             score++
+            localStorage.setItem('score', score)
             popUpElement.innerHTML = textPopUp[choice - 1]
         } else if (loseCondition) {
             if (score > 0) {
                 score--
+                localStorage.setItem('score', score)
             }
             popUpElement.innerHTML = textPopUp[2]
         } else {

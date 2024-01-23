@@ -6,4 +6,5 @@ If the user's prediction is correct, they earn 1 point; otherwise, they lose 1 p
 
 
 # Preview 
-![image](https://github.com/maxencevdg/bitcoin-predictor/assets/91530031/e77df157-e727-4f7c-b09d-dd634b7178ec)
+![image](https://github.com/maxencevdg/bitcoin-predictor/assets/91530031/7306af91-e413-4afe-be4e-0a002429c3d5")
+
